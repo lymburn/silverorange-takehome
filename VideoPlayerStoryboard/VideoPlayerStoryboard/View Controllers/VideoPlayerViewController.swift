@@ -12,5 +12,18 @@ class VideoPlayerViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Video Player"
+        
+        let videoService = VideoService()
+        
+        Task {
+            do {
+                let videos = try await videoService.fetchVideos()
+                
+                print(videos)
+            }
+            catch {
+                print(error)
+            }
+        }
     }
 }
