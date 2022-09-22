@@ -42,6 +42,8 @@ class VideoPlayerViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "play"), for: .normal)
         button.addAction(.init(handler: { _ in self.playPauseButtonTapped() }), for: .touchUpInside)
+        button.setContentHuggingPriority(.required, for: .horizontal)
+        button.setContentHuggingPriority(.required, for: .vertical)
         return button
     }()
     
@@ -49,6 +51,8 @@ class VideoPlayerViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "next"), for: .normal)
         button.addAction(.init(handler: { _ in self.nextVideoButtonTapped() }), for: .touchUpInside)
+        button.setContentHuggingPriority(.required, for: .horizontal)
+        button.setContentHuggingPriority(.required, for: .vertical)
         return button
     }()
     
@@ -56,6 +60,8 @@ class VideoPlayerViewController: UIViewController {
         let button = UIButton()
         button.setImage(UIImage(named: "previous"), for: .normal)
         button.addAction(.init(handler: { _ in self.previousVideoButtonTapped() }), for: .touchUpInside)
+        button.setContentHuggingPriority(.required, for: .horizontal)
+        button.setContentHuggingPriority(.required, for: .vertical)
         return button
     }()
     
@@ -63,7 +69,8 @@ class VideoPlayerViewController: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [previousButton, playPauseButton, nextButton])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
+        stackView.spacing = 60
         return stackView
     }()
     
@@ -128,9 +135,7 @@ private extension VideoPlayerViewController {
                 videoPlayerView.addSubview(playbackStackView)
                 
                 NSLayoutConstraint.activate([playbackStackView.centerXAnchor.constraint(equalTo: videoPlayerView.centerXAnchor),
-                                             playbackStackView.widthAnchor.constraint(equalToConstant: videoPlayerView.bounds.width * 0.7),
-                                             playbackStackView.centerYAnchor.constraint(equalTo: videoPlayerView.centerYAnchor),
-                                             playbackStackView.heightAnchor.constraint(equalToConstant: videoPlayerView.bounds.height * 0.5)])
+                                             playbackStackView.centerYAnchor.constraint(equalTo: videoPlayerView.centerYAnchor)])
             }
             catch {
                 self.showAlert(alertTitle: "Server Error", alertMessage: "Failed to fetch videos from the server.")
