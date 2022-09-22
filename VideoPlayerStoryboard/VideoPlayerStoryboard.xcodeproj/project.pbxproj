@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3AF67A9725A64DF400D360A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67A9625A64DF400D360A7 /* AppDelegate.m */; };
-		3AF67A9A25A64DF400D360A7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67A9925A64DF400D360A7 /* SceneDelegate.m */; };
-		3AF67A9D25A64DF400D360A7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67A9C25A64DF400D360A7 /* ViewController.m */; };
-		3AF67AA025A64DF400D360A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF67A9E25A64DF400D360A7 /* Main.storyboard */; };
+		26B7443D28DCE8B700B43CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7443C28DCE8B700B43CEC /* AppDelegate.swift */; };
+		26B7444128DCE94C00B43CEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7444028DCE94B00B43CEC /* SceneDelegate.swift */; };
+		26B7444328DCE9A500B43CEC /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7444228DCE9A500B43CEC /* VideoPlayerViewController.swift */; };
 		3AF67AA225A64DF600D360A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF67AA125A64DF600D360A7 /* Assets.xcassets */; };
 		3AF67AA525A64DF600D360A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF67AA325A64DF600D360A7 /* LaunchScreen.storyboard */; };
-		3AF67AA825A64DF600D360A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67AA725A64DF600D360A7 /* main.m */; };
 		3AF67AB225A64DF600D360A7 /* VideoPlayerStoryboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67AB125A64DF600D360A7 /* VideoPlayerStoryboardTests.m */; };
 		3AF67ABD25A64DF600D360A7 /* VideoPlayerStoryboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67ABC25A64DF600D360A7 /* VideoPlayerStoryboardUITests.m */; };
 /* End PBXBuildFile section */
@@ -36,18 +34,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26B7443C28DCE8B700B43CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26B7444028DCE94B00B43CEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		26B7444228DCE9A500B43CEC /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		3AF67A9225A64DF400D360A7 /* VideoPlayerStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlayerStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AF67A9525A64DF400D360A7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3AF67A9625A64DF400D360A7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3AF67A9825A64DF400D360A7 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		3AF67A9925A64DF400D360A7 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
-		3AF67A9B25A64DF400D360A7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3AF67A9C25A64DF400D360A7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		3AF67A9F25A64DF400D360A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3AF67AA125A64DF600D360A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AF67AA425A64DF600D360A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AF67AA625A64DF600D360A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AF67AA725A64DF600D360A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3AF67AAD25A64DF600D360A7 /* VideoPlayerStoryboardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPlayerStoryboardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF67AB125A64DF600D360A7 /* VideoPlayerStoryboardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerStoryboardTests.m; sourceTree = "<group>"; };
 		3AF67AB325A64DF600D360A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +74,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26B7444428DCEA3700B43CEC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AF67AA125A64DF600D360A7 /* Assets.xcassets */,
+				3AF67AA325A64DF600D360A7 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26B7444528DCEA4A00B43CEC /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				26B7444228DCE9A500B43CEC /* VideoPlayerViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		3AF67A8925A64DF400D360A7 = {
 			isa = PBXGroup;
 			children = (
@@ -104,17 +114,11 @@
 		3AF67A9425A64DF400D360A7 /* VideoPlayerStoryboard */ = {
 			isa = PBXGroup;
 			children = (
-				3AF67A9525A64DF400D360A7 /* AppDelegate.h */,
-				3AF67A9625A64DF400D360A7 /* AppDelegate.m */,
-				3AF67A9825A64DF400D360A7 /* SceneDelegate.h */,
-				3AF67A9925A64DF400D360A7 /* SceneDelegate.m */,
-				3AF67A9B25A64DF400D360A7 /* ViewController.h */,
-				3AF67A9C25A64DF400D360A7 /* ViewController.m */,
-				3AF67A9E25A64DF400D360A7 /* Main.storyboard */,
-				3AF67AA125A64DF600D360A7 /* Assets.xcassets */,
-				3AF67AA325A64DF600D360A7 /* LaunchScreen.storyboard */,
+				26B7444528DCEA4A00B43CEC /* View Controllers */,
+				26B7444428DCEA3700B43CEC /* Supporting Files */,
 				3AF67AA625A64DF600D360A7 /* Info.plist */,
-				3AF67AA725A64DF600D360A7 /* main.m */,
+				26B7443C28DCE8B700B43CEC /* AppDelegate.swift */,
+				26B7444028DCE94B00B43CEC /* SceneDelegate.swift */,
 			);
 			path = VideoPlayerStoryboard;
 			sourceTree = "<group>";
@@ -203,6 +207,7 @@
 				TargetAttributes = {
 					3AF67A9125A64DF400D360A7 = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1340;
 					};
 					3AF67AAC25A64DF600D360A7 = {
 						CreatedOnToolsVersion = 12.1;
@@ -241,7 +246,6 @@
 			files = (
 				3AF67AA525A64DF600D360A7 /* LaunchScreen.storyboard in Resources */,
 				3AF67AA225A64DF600D360A7 /* Assets.xcassets in Resources */,
-				3AF67AA025A64DF400D360A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +270,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF67A9D25A64DF400D360A7 /* ViewController.m in Sources */,
-				3AF67A9725A64DF400D360A7 /* AppDelegate.m in Sources */,
-				3AF67AA825A64DF600D360A7 /* main.m in Sources */,
-				3AF67A9A25A64DF400D360A7 /* SceneDelegate.m in Sources */,
+				26B7444328DCE9A500B43CEC /* VideoPlayerViewController.swift in Sources */,
+				26B7443D28DCE8B700B43CEC /* AppDelegate.swift in Sources */,
+				26B7444128DCE94C00B43CEC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,14 +308,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3AF67A9E25A64DF400D360A7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3AF67A9F25A64DF400D360A7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3AF67AA325A64DF600D360A7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -380,6 +375,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = "";
 			};
 			name = Debug;
 		};
@@ -432,6 +428,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -441,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VideoPlayerStoryboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -449,6 +447,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.silverorange.VideoPlayerStoryboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -458,6 +458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VideoPlayerStoryboard/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -466,6 +467,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.silverorange.VideoPlayerStoryboard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -473,6 +475,7 @@
 		3AF67AC525A64DF600D360A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VideoPlayerStoryboardTests/Info.plist;
@@ -492,6 +495,7 @@
 		3AF67AC625A64DF600D360A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VideoPlayerStoryboardTests/Info.plist;
@@ -511,6 +515,7 @@
 		3AF67AC825A64DF600D360A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VideoPlayerStoryboardUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -528,6 +533,7 @@
 		3AF67AC925A64DF600D360A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = VideoPlayerStoryboardUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
