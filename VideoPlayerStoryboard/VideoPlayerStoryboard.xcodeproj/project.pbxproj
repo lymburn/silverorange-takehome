@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2601898428DD0E3000520FFB /* VideoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2601898328DD0E3000520FFB /* VideoViewModel.swift */; };
 		26B7443D28DCE8B700B43CEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7443C28DCE8B700B43CEC /* AppDelegate.swift */; };
 		26B7444128DCE94C00B43CEC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7444028DCE94B00B43CEC /* SceneDelegate.swift */; };
 		26B7444328DCE9A500B43CEC /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B7444228DCE9A500B43CEC /* VideoPlayerViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2601898328DD0E3000520FFB /* VideoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewModel.swift; sourceTree = "<group>"; };
 		26B7443C28DCE8B700B43CEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26B7444028DCE94B00B43CEC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		26B7444228DCE9A500B43CEC /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2601898228DD0E2000520FFB /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				2601898328DD0E3000520FFB /* VideoViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		26B7444428DCEA3700B43CEC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 			children = (
 				26B7445428DCEC8500B43CEC /* Helpers */,
 				26B7444D28DCEC3C00B43CEC /* Networking */,
+				2601898228DD0E2000520FFB /* View Models */,
 				26B7444628DCEC0500B43CEC /* Models */,
 				26B7444528DCEA4A00B43CEC /* View Controllers */,
 				26B7444428DCEA3700B43CEC /* Supporting Files */,
@@ -196,7 +207,6 @@
 				503C7B99C65B42A4880C4629 /* Pods-VideoPlayerStoryboard.debug.xcconfig */,
 				A1AE9503558822C867E02822 /* Pods-VideoPlayerStoryboard.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -389,6 +399,7 @@
 				26B7443D28DCE8B700B43CEC /* AppDelegate.swift in Sources */,
 				26B7444128DCE94C00B43CEC /* SceneDelegate.swift in Sources */,
 				26B7445328DCEC6100B43CEC /* Endpoints.swift in Sources */,
+				2601898428DD0E3000520FFB /* VideoViewModel.swift in Sources */,
 				26B7444A28DCEC1600B43CEC /* Author.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

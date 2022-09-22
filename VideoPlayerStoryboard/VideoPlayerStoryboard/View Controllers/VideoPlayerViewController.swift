@@ -12,7 +12,7 @@ import MarkdownKit
 class VideoPlayerViewController: UIViewController {
     // MARK: Private Properties
     private var player: AVPlayer!
-    private var videos: [Video] = []
+    private var videoViewModels: [VideoViewModel] = []
     private var currentVideoIndex = 0
     private var isVideoPaused = true {
         didSet {
@@ -27,6 +27,7 @@ class VideoPlayerViewController: UIViewController {
     private let videoPlayerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .black
         return view
     }()
     
@@ -100,22 +101,26 @@ private extension VideoPlayerViewController {
         Task {
             do {
                 // Fetch videos from the service and sort them by date
-                videos = try await videoService.fetchVideos()
-                sortVideosByAscendingDate()
+                var videos = try await videoService.fetchVideos()
+                sortVideosByAscendingDate(videos: &videos)
+                
+                // Populate video view models with the fetched videos
+                videoViewModels = videos.map { VideoViewModel(video: $0) }
 
                 // Display the first video
-                guard let video = videos.first, let url = URL(string: video.hlsURL) else { return }
+                guard let videoViewModel = videoViewModels.first, let url = URL(string: videoViewModel.video.hlsURL) else { return }
                 
                 player = AVPlayer(url: url)
                 
                 // Create video player layer and add it to the player view layer
                 let playerLayer: AVPlayerLayer
                 playerLayer = AVPlayerLayer(player: player)
-                playerLayer.videoGravity = .resizeAspectFill
+                // Using resizeAspect instead of resizeAspectFill or the video will get cut out
+                playerLayer.videoGravity = .resizeAspect
                 playerLayer.frame = CGRect(origin: .zero, size: videoPlayerView.frame.size)
 
                 videoPlayerView.layer.addSublayer(playerLayer)
-                detailsTextView.attributedText = markdownParser.parse(video.description)
+                detailsTextView.attributedText = markdownParser.parse(videoViewModel.descriptionText)
                 
                 // Add playback controls
                 videoPlayerView.addSubview(playbackStackView)
@@ -131,7 +136,7 @@ private extension VideoPlayerViewController {
         }
     }
     
-    func sortVideosByAscendingDate() {
+    func sortVideosByAscendingDate(videos: inout [Video]) {
         videos = videos.sorted {
             guard let publishedDate1 = $0.publishedDate,
                   let publishedDate2 = $1.publishedDate else { return false }
@@ -141,11 +146,11 @@ private extension VideoPlayerViewController {
     }
     
     func updateUI(forVideoIndex index: Int) {
-        guard index >= 0 && index < videos.count else { return }
+        guard index >= 0 && index < videoViewModels.count else { return }
         
-        let currentVideo = videos[index]
+        let currentVideoViewModel = videoViewModels[index]
         
-        guard let url = URL(string: currentVideo.hlsURL) else { return }
+        guard let url = URL(string: currentVideoViewModel.video.hlsURL) else { return }
         
         // Create a new player with the updated video url
         player = AVPlayer(url: url)
@@ -158,7 +163,7 @@ private extension VideoPlayerViewController {
         pauseVideo()
         
         // Update video description
-        detailsTextView.attributedText = markdownParser.parse(currentVideo.description)
+        detailsTextView.attributedText = markdownParser.parse(currentVideoViewModel.descriptionText)
     }
     
     func playPauseButtonTapped() {
@@ -185,7 +190,7 @@ private extension VideoPlayerViewController {
     }
     
     func nextVideoButtonTapped() {
-        guard currentVideoIndex + 1 < videos.count else { return }
+        guard currentVideoIndex + 1 < videoViewModels.count else { return }
         
         currentVideoIndex += 1
         updateUI(forVideoIndex: currentVideoIndex)
