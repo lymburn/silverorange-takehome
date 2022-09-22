@@ -20,6 +20,7 @@
 		3AF67AA525A64DF600D360A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AF67AA325A64DF600D360A7 /* LaunchScreen.storyboard */; };
 		3AF67AB225A64DF600D360A7 /* VideoPlayerStoryboardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67AB125A64DF600D360A7 /* VideoPlayerStoryboardTests.m */; };
 		3AF67ABD25A64DF600D360A7 /* VideoPlayerStoryboardUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AF67ABC25A64DF600D360A7 /* VideoPlayerStoryboardUITests.m */; };
+		5010DEB9BB01DB247D5A32E2 /* Pods_VideoPlayerStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C123339FA740963DCA784FE2 /* Pods_VideoPlayerStoryboard.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,9 @@
 		3AF67AB825A64DF600D360A7 /* VideoPlayerStoryboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoPlayerStoryboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF67ABC25A64DF600D360A7 /* VideoPlayerStoryboardUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoPlayerStoryboardUITests.m; sourceTree = "<group>"; };
 		3AF67ABE25A64DF600D360A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		503C7B99C65B42A4880C4629 /* Pods-VideoPlayerStoryboard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlayerStoryboard.debug.xcconfig"; path = "Target Support Files/Pods-VideoPlayerStoryboard/Pods-VideoPlayerStoryboard.debug.xcconfig"; sourceTree = "<group>"; };
+		A1AE9503558822C867E02822 /* Pods-VideoPlayerStoryboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoPlayerStoryboard.release.xcconfig"; path = "Target Support Files/Pods-VideoPlayerStoryboard/Pods-VideoPlayerStoryboard.release.xcconfig"; sourceTree = "<group>"; };
+		C123339FA740963DCA784FE2 /* Pods_VideoPlayerStoryboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VideoPlayerStoryboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5010DEB9BB01DB247D5A32E2 /* Pods_VideoPlayerStoryboard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +142,8 @@
 				3AF67AB025A64DF600D360A7 /* VideoPlayerStoryboardTests */,
 				3AF67ABB25A64DF600D360A7 /* VideoPlayerStoryboardUITests */,
 				3AF67A9325A64DF400D360A7 /* Products */,
+				73C28C29E26973A588920D19 /* Pods */,
+				D2BAF947327E09C1A92AA813 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +190,24 @@
 			path = VideoPlayerStoryboardUITests;
 			sourceTree = "<group>";
 		};
+		73C28C29E26973A588920D19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				503C7B99C65B42A4880C4629 /* Pods-VideoPlayerStoryboard.debug.xcconfig */,
+				A1AE9503558822C867E02822 /* Pods-VideoPlayerStoryboard.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D2BAF947327E09C1A92AA813 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C123339FA740963DCA784FE2 /* Pods_VideoPlayerStoryboard.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -190,9 +215,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AF67AC125A64DF600D360A7 /* Build configuration list for PBXNativeTarget "VideoPlayerStoryboard" */;
 			buildPhases = (
+				519326498A20E10CF85D372B /* [CP] Check Pods Manifest.lock */,
 				3AF67A8E25A64DF400D360A7 /* Sources */,
 				3AF67A8F25A64DF400D360A7 /* Frameworks */,
 				3AF67A9025A64DF400D360A7 /* Resources */,
+				4EFA2A55627CA23DF51B219C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -306,6 +333,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EFA2A55627CA23DF51B219C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoPlayerStoryboard/Pods-VideoPlayerStoryboard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VideoPlayerStoryboard/Pods-VideoPlayerStoryboard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VideoPlayerStoryboard/Pods-VideoPlayerStoryboard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		519326498A20E10CF85D372B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VideoPlayerStoryboard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3AF67A8E25A64DF400D360A7 /* Sources */ = {
@@ -483,6 +552,7 @@
 		};
 		3AF67AC225A64DF600D360A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 503C7B99C65B42A4880C4629 /* Pods-VideoPlayerStoryboard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -503,6 +573,7 @@
 		};
 		3AF67AC325A64DF600D360A7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1AE9503558822C867E02822 /* Pods-VideoPlayerStoryboard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

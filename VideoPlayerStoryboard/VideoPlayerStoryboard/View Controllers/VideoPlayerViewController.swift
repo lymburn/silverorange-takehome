@@ -140,7 +140,7 @@ private extension VideoPlayerViewController {
     }
     
     func updateUI(forVideoIndex index: Int) {
-        guard index < videos.count else { return }
+        guard index >= 0 && index < videos.count else { return }
         
         let currentVideo = videos[index]
         
