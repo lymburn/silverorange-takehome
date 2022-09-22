@@ -12,7 +12,6 @@ class VideoPlayerViewController: UIViewController {
     // MARK: Private Properties
     private var player: AVPlayer!
     private var videos: [Video] = []
-    private let videoService = VideoService()
     private var currentVideoIndex = 0
     private var isVideoPaused = true {
         didSet {
@@ -20,6 +19,8 @@ class VideoPlayerViewController: UIViewController {
             playPauseButton.setImage(playPauseButtonImage, for: .normal)
         }
     }
+    
+    private let videoService = VideoService()
     
     private let videoPlayerView: UIView = {
         let view = UIView()
@@ -37,6 +38,7 @@ class VideoPlayerViewController: UIViewController {
     
     private lazy var playPauseButton: UIButton = {
         let button = UIButton()
+        button.setImage(UIImage(named: "play"), for: .normal)
         button.addAction(.init(handler: { _ in self.playPauseButtonTapped() }), for: .touchUpInside)
         return button
     }()
@@ -90,28 +92,31 @@ class VideoPlayerViewController: UIViewController {
     }
 }
 
+// MARK: Private Functions
 private extension VideoPlayerViewController {
-    // Load videos for the first time and display the first video
+    // Load videos from the server and display the first video
     func loadVideos() {
         Task {
             do {
+                // Fetch videos from the service and sort them by date
                 videos = try await videoService.fetchVideos()
-                
+                sortVideosByAscendingDate()
+
+                // Display the first video
                 guard let video = videos.first, let url = URL(string: video.hlsURL) else { return }
                 
                 player = AVPlayer(url: url)
                 
-                // Create player layer displaying the first loaded video
+                // Create video player layer and add it to the player view layer
                 let playerLayer: AVPlayerLayer
                 playerLayer = AVPlayerLayer(player: player)
-                playerLayer.videoGravity = .resizeAspect
+                playerLayer.videoGravity = .resizeAspectFill
                 playerLayer.frame = CGRect(origin: .zero, size: videoPlayerView.frame.size)
 
                 videoPlayerView.layer.addSublayer(playerLayer)
                 detailsTextView.text = video.description
                 
                 // Add playback controls
-                isVideoPaused = true
                 videoPlayerView.addSubview(playbackStackView)
                 
                 NSLayoutConstraint.activate([playbackStackView.centerXAnchor.constraint(equalTo: videoPlayerView.centerXAnchor),
@@ -122,6 +127,15 @@ private extension VideoPlayerViewController {
             catch {
                 print(error)
             }
+        }
+    }
+    
+    func sortVideosByAscendingDate() {
+        videos = videos.sorted {
+            guard let publishedDate1 = $0.publishedDate,
+                  let publishedDate2 = $1.publishedDate else { return false }
+            
+            return publishedDate1.compare(publishedDate2) == .orderedAscending
         }
     }
     
