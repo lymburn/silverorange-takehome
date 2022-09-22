@@ -123,6 +123,8 @@ private extension VideoPlayerViewController {
                 detailsTextView.attributedText = markdownParser.parse(videoViewModel.descriptionText)
                 
                 // Add playback controls
+                // NOTE: I am assuming the playback controls are always displayed as it does not mention otherwise.
+                // Additionally, I did not have time to add a circular gray background to the buttons as shown in the wireframe.
                 videoPlayerView.addSubview(playbackStackView)
                 
                 NSLayoutConstraint.activate([playbackStackView.centerXAnchor.constraint(equalTo: videoPlayerView.centerXAnchor),
@@ -131,7 +133,7 @@ private extension VideoPlayerViewController {
                                              playbackStackView.heightAnchor.constraint(equalToConstant: videoPlayerView.bounds.height * 0.5)])
             }
             catch {
-                print(error)
+                self.showAlert(alertTitle: "Server Error", alertMessage: "Failed to fetch videos from the server.")
             }
         }
     }
@@ -167,8 +169,6 @@ private extension VideoPlayerViewController {
     }
     
     func playPauseButtonTapped() {
-        guard player != nil else { return }
-        
         if isVideoPaused {
             // Play button tapped
             playVideo()
@@ -180,11 +180,15 @@ private extension VideoPlayerViewController {
     }
     
     func pauseVideo() {
+        guard player != nil else { return }
+        
         player.pause()
         isVideoPaused = true
     }
     
     func playVideo() {
+        guard player != nil else { return }
+        
         player.play()
         isVideoPaused = false
     }

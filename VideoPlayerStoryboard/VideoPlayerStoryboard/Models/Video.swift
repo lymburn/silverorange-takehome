@@ -18,6 +18,7 @@ struct Video: Decodable {
 }
 
 extension Video {
+    /// Published date of the video after parsing it from ISO-8601 format. Returns nil if unable to parse.
     var publishedDate: Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSXXXXX"

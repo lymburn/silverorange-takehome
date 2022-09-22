@@ -9,6 +9,8 @@ import Foundation
 
 class VideoViewModel {
     // MARK: Public Properties
+    
+    /// Markdown video description with the title and author appended in the beginning.
     var descriptionText: String {
         let videoTitle = video.title
         let videoAuthor = video.author.name
