@@ -7,6 +7,7 @@
 
 import UIKit
 import AVKit
+import MarkdownKit
 
 class VideoPlayerViewController: UIViewController {
     // MARK: Private Properties
@@ -20,6 +21,7 @@ class VideoPlayerViewController: UIViewController {
         }
     }
     
+    private let markdownParser = MarkdownParser()
     private let videoService = VideoService()
     
     private let videoPlayerView: UIView = {
@@ -32,7 +34,6 @@ class VideoPlayerViewController: UIViewController {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = false
-        textView.font = .boldSystemFont(ofSize: 20)
         return textView
     }()
     
@@ -114,7 +115,7 @@ private extension VideoPlayerViewController {
                 playerLayer.frame = CGRect(origin: .zero, size: videoPlayerView.frame.size)
 
                 videoPlayerView.layer.addSublayer(playerLayer)
-                detailsTextView.text = video.description
+                detailsTextView.attributedText = markdownParser.parse(video.description)
                 
                 // Add playback controls
                 videoPlayerView.addSubview(playbackStackView)
@@ -157,7 +158,7 @@ private extension VideoPlayerViewController {
         pauseVideo()
         
         // Update video description
-        detailsTextView.text = currentVideo.description
+        detailsTextView.attributedText = markdownParser.parse(currentVideo.description)
     }
     
     func playPauseButtonTapped() {
